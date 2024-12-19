@@ -3,117 +3,203 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Food Menu Showcase</title>
+    <title>Menu Showcase</title>
     <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
+            background-color: #f8f9fa;
             color: #333;
         }
 
         header {
-            background-color: #2d2d2d;
-            color: white;
-            padding: 20px;
+            background-color: #343a40;
+            padding: 10px;
             text-align: center;
         }
 
-        header h1 {
-            margin: 0;
+        header img {
+            width: 150px;
+            height: auto;
         }
 
-        .container {
+        .video-container {
             display: flex;
-            flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
+            margin: 20px auto;
+            flex-wrap: wrap;
+        }
+
+        .video-container video {
+            width: 30%;
+            max-width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        main {
             padding: 20px;
         }
 
-        .card {
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            width: 300px;
-            text-align: center;
-            transition: transform 0.3s;
+        .section {
+            margin-bottom: 40px;
         }
 
-        .card:hover {
-            transform: translateY(-10px);
-        }
-
-        .card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .card h2 {
-            margin: 10px 0;
-            font-size: 1.5rem;
-        }
-
-        .card p {
-            padding: 0 10px;
-            font-size: 1rem;
-            color: #555;
-        }
-
-        .card a {
-            display: inline-block;
-            margin: 10px;
-            padding: 10px 20px;
-            text-decoration: none;
-            color: white;
+        .section h2 {
             background-color: #007BFF;
+            color: white;
+            padding: 10px;
             border-radius: 5px;
+        }
+
+        .food-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        .food-item:hover {
+            transform: scale(1.02);
+        }
+
+        .food-item button {
+            padding: 5px 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
             transition: background-color 0.3s;
         }
 
-        .card a:hover {
-            background-color: #0056b3;
+        .food-item button:hover {
+            background-color: #218838;
         }
 
         footer {
             text-align: center;
             padding: 20px;
-            background-color: #2d2d2d;
+            background-color: #343a40;
             color: white;
-            margin-top: 20px;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Welcome to Our Menu</h1>
-        <p>Explore Delicious Food & Drinks</p>
+        <img src="logo.jpg" alt="Restaurant Logo">
     </header>
 
-    <div class="container">
-        <div class="card">
-            <img src="https://via.placeholder.com/300x200" alt="Roasted Papad">
-            <h2>Roasted Papad (રોસ્ટેડ પાપડ)</h2>
-            <p>A crispy and healthy papad, perfect for your meal. Price: Rs. 10</p>
-        </div>
-
-        <div class="card">
-            <img src="https://via.placeholder.com/300x200" alt="Cheese Pizza">
-            <h2>Cheese Pizza (ચીઝ પિઝા)</h2>
-            <p>Cheesy and delicious pizza for a perfect treat. Price: Rs. 150</p>
-        </div>
-
-        <div class="card">
-            <img src="https://via.placeholder.com/300x200" alt="Masala Chass">
-            <h2>Masala Chass (મસાલા છાસ)</h2>
-            <p>A refreshing spiced buttermilk to cool you down. Price: Rs. 20</p>
-        </div>
+    <div class="video-container">
+        <video controls>
+            <source src="1.mkv" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <video controls>
+            <source src="2.mkv" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <video controls>
+            <source src="4.mkv" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
     </div>
 
+    <main>
+        <div class="section">
+            <h2>Veg (વેજ)</h2>
+            <div class="food-item">
+                <span>Veg Kolhapuri - Rs. 150.00 / Rs. 240.00</span>
+                <button>Order Now</button>
+            </div>
+            <div class="food-item">
+                <span>Veg Makhanwala - Rs. 160.00 / Rs. 250.00</span>
+                <button>Order Now</button>
+            </div>
+            <div class="food-item">
+                <span>Veg Handi - Rs. 160.00 / Rs. 250.00</span>
+                <button>Order Now</button>
+            </div>
+            <!-- Add more items similarly -->
+        </div>
+
+        <div class="section">
+            <h2>Dal (દાળ)</h2>
+            <div class="food-item">
+                <span>Dal Fry - Rs. 100.00</span>
+                <button>Order Now</button>
+            </div>
+            <div class="food-item">
+                <span>Dal Tadka - Rs. 120.00</span>
+                <button>Order Now</button>
+            </div>
+            <div class="food-item">
+                <span>Butter Dal Tadka - Rs. 130.00</span>
+                <button>Order Now</button>
+            </div>
+            <!-- Add more items similarly -->
+        </div>
+
+        <div class="section">
+            <h2>Papad (પાપડ)</h2>
+            <div class="food-item">
+                <span>Roasted Papad - Rs. 10.00</span>
+                <button>Order Now</button>
+            </div>
+            <div class="food-item">
+                <span>Fried Papad - Rs. 20.00</span>
+                <button>Order Now</button>
+            </div>
+            <div class="food-item">
+                <span>Masala Papad - Rs. 40.00</span>
+                <button>Order Now</button>
+            </div>
+            <!-- Add more items similarly -->
+        </div>
+
+        <div class="section">
+            <h2>Pizza (પીજા)</h2>
+            <div class="food-item">
+                <span>American Garden Pizza - Rs. 100.00</span>
+                <button>Order Now</button>
+            </div>
+            <div class="food-item">
+                <span>Special Veg Pizza - Rs. 150.00</span>
+                <button>Order Now</button>
+            </div>
+            <div class="food-item">
+                <span>Cheese Pizza - Rs. 150.00</span>
+                <button>Order Now</button>
+            </div>
+            <!-- Add more items similarly -->
+        </div>
+
+        <div class="section">
+            <h2>Drinks (ડ્રિંક્સ)</h2>
+            <div class="food-item">
+                <span>Plain Chass - Rs. 15.00</span>
+                <button>Order Now</button>
+            </div>
+            <div class="food-item">
+                <span>Masala Chass - Rs. 20.00</span>
+                <button>Order Now</button>
+            </div>
+            <div class="food-item">
+                <span>Butter Milk - Rs. 25.00</span>
+                <button>Order Now</button>
+            </div>
+            <!-- Add more items similarly -->
+        </div>
+    </main>
+
     <footer>
-        <p>&copy; 2024 Isidat | All Rights Reserved</p>
+        <p>&copy; 2024 Your Restaurant Name | All Rights Reserved</p>
     </footer>
 </body>
 </html>
