@@ -3,209 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meghavi Restaurant Menu</title>
+    <title>Food Menu Showcase</title>
     <style>
-        /* Basic Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #fdf6e3; /* Soft cream color */
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
             color: #333;
-            line-height: 1.6;
         }
 
-        /* Header and Navbar */
         header {
-            background-color: #6c5ce7; /* Elegant purple */
-            color: #fff;
-            padding: 1em;
+            background-color: #2d2d2d;
+            color: white;
+            padding: 20px;
             text-align: center;
-            border-bottom: 4px solid #a29bfe; /* Accent border */
         }
 
         header h1 {
-            margin: 0.2em 0;
-            font-size: 2.2em;
+            margin: 0;
         }
 
-        header img {
-            width: 100px;
-            margin-bottom: 10px;
-            border-radius: 50%;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        nav {
+        .container {
             display: flex;
-            justify-content: center;
             flex-wrap: wrap;
-            margin-top: 1em;
-        }
-
-        nav .button {
-            background-color: #00cec9; /* Vibrant teal */
-            color: #fff;
-            padding: 10px 15px;
-            margin: 5px;
-            border-radius: 25px;
-            cursor: pointer;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-
-        nav .button:hover {
-            background-color: #0097a7; /* Darker teal */
-            transform: scale(1.05);
-        }
-
-        /* Slideshow Container */
-        .slideshow-container {
-            display: flex;
             justify-content: center;
-            flex-wrap: wrap;
-            margin: 20px auto;
-            max-width: 100%;
+            gap: 20px;
+            padding: 20px;
         }
 
-        video {
-            width: 100%;
-            max-width: 300px;
-            margin: 10px;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Section Styles */
-        section {
-            padding: 1.5em;
-            background-color: #fff;
+        .card {
+            background-color: white;
             border-radius: 8px;
-            margin: 1em 0;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 300px;
             text-align: center;
+            transition: transform 0.3s;
         }
 
-        h2 {
-            color: #6c5ce7;
-            margin-bottom: 0.5em;
-            font-size: 1.8em;
-            font-weight: bold;
+        .card:hover {
+            transform: translateY(-10px);
         }
 
-        /* Menu Item Styles */
-        .menu-category {
-            margin: 1em 0;
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
         }
 
-        .menu-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 0.5em 0;
-            border-bottom: 1px solid #ddd;
-            font-size: 1em;
+        .card h2 {
+            margin: 10px 0;
+            font-size: 1.5rem;
+        }
+
+        .card p {
+            padding: 0 10px;
+            font-size: 1rem;
             color: #555;
         }
 
-        .menu-item:last-child {
-            border-bottom: none;
-        }
-
-        .food-name {
-            font-weight: bold;
-            color: #2d3436;
-        }
-
-        .price {
-            color: #d63031;
-            font-weight: bold;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #6c5ce7;
-            color: #fff;
-            text-align: center;
-            padding: 1em 0;
-            margin-top: 2em;
-        }
-
-        /* Images at the Bottom */
-        .bottom-images {
-            display: flex;
-            justify-content: center;
-            margin: 2em 0;
-            flex-wrap: wrap;
-        }
-
-        .bottom-images img {
-            width: 150px;
+        .card a {
+            display: inline-block;
             margin: 10px;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 10px 20px;
+            text-decoration: none;
+            color: white;
+            background-color: #007BFF;
+            border-radius: 5px;
+            transition: background-color 0.3s;
         }
 
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            nav .button {
-                margin: 5px 0;
-                width: 90%;
-                text-align: center;
-            }
+        .card a:hover {
+            background-color: #0056b3;
+        }
 
-            .menu-item {
-                flex-direction: column;
-                text-align: left;
-            }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #2d2d2d;
+            color: white;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
+    <header>
+        <h1>Welcome to Our Menu</h1>
+        <p>Explore Delicious Food & Drinks</p>
+    </header>
 
-<header>
-    <img src="logo.jpg" alt="Meghavi Restaurant Logo">
-    <h1>Meghavi Restaurant</h1>
-    <nav>
-        <a href="#papad" class="button">Papad</a>
-        <a href="#pizza" class="button">Pizza</a>
-        <a href="#fries" class="button">Fries</a>
-        <a href="#drinks" class="button">Drinks</a>
-    </nav>
-</header>
+    <div class="container">
+        <div class="card">
+            <img src="https://via.placeholder.com/300x200" alt="Roasted Papad">
+            <h2>Roasted Papad (રોસ્ટેડ પાપડ)</h2>
+            <p>A crispy and healthy papad, perfect for your meal. Price: Rs. 10</p>
+        </div>
 
-<div class="slideshow-container">
-    <video controls>
-        <source src="1.mp4" type="video/mp4">
-    </video>
-    <video controls>
-        <source src="2.mp4" type="video/mp4">
-    </video>
-</div>
+        <div class="card">
+            <img src="https://via.placeholder.com/300x200" alt="Cheese Pizza">
+            <h2>Cheese Pizza (ચીઝ પિઝા)</h2>
+            <p>Cheesy and delicious pizza for a perfect treat. Price: Rs. 150</p>
+        </div>
 
-<section id="papad">
-    <h2>Papad</h2>
-    <div class="menu-category">
-        <div class="menu-item"><span class="food-name">Roasted Papad</span> <span class="price">₹10.00</span></div>
-        <div class="menu-item"><span class="food-name">Fried Papad</span> <span class="price">₹20.00</span></div>
+        <div class="card">
+            <img src="https://via.placeholder.com/300x200" alt="Masala Chass">
+            <h2>Masala Chass (મસાલા છાસ)</h2>
+            <p>A refreshing spiced buttermilk to cool you down. Price: Rs. 20</p>
+        </div>
     </div>
-</section>
 
-<section id="pizza">
-    <h2>Pizza</h2>
-    <div class="menu-category">
-        <div class="menu-item"><span class="food-name">Cheese Pizza</span> <span class="price">₹150.00</span></div>
-        <div class="menu-item"><span class="food-name">Veg Pizza</span> <span class="price">₹200.00</span></div>
-    </div>
-</section>
-
-<footer>
-    <p>&copy; 2024 Meghavi Restaurant. All rights reserved.</p>
-</footer>
-
+    <footer>
+        <p>&copy; 2024 Isidat | All Rights Reserved</p>
+    </footer>
 </body>
 </html>
